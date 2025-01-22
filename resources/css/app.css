@@ -1,3 +1,74 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Custom styles */
+.transition-transform {
+    transition-property: transform;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+
+/* Smooth page transitions */
+.page-enter-active,
+.page-leave-active {
+    transition: opacity 0.5s;
+}
+.page-enter,
+.page-leave-to {
+    opacity: 0;
+}
+
+/* Custom animations */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Swiper Styles */
+.swiper-container {
+    padding: 2rem;
+    margin: -2rem;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: theme('colors.blue.600');
+}
+
+.swiper-pagination-bullet {
+    background: theme('colors.gray.300');
+}
+
+.swiper-pagination-bullet-active {
+    background: theme('colors.blue.600');
+}
+
+.swiper-slide {
+    height: auto;
+}
+
+/* Dark mode styles for Swiper */
+.dark .swiper-button-next,
+.dark .swiper-button-prev {
+    color: theme('colors.blue.400');
+}
+
+.dark .swiper-pagination-bullet {
+    background: theme('colors.gray.600');
+}
+
+.dark .swiper-pagination-bullet-active {
+    background: theme('colors.blue.400');
+}
